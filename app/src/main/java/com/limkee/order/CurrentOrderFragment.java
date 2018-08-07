@@ -60,9 +60,9 @@ public class CurrentOrderFragment extends Fragment {
         routeNo = Integer.toString(driver.getRouteNo());
         isEnglish = bundle.getString("language");
         if (isEnglish.equals("Yes")){
-            ((NavigationActivity)getActivity()).setActionBarTitle("Current Orders");
+            ((NavigationActivity)getActivity()).setActionBarTitle("Today's Orders");
         } else {
-            ((NavigationActivity)getActivity()).setActionBarTitle("当前订单");
+            ((NavigationActivity)getActivity()).setActionBarTitle("今日订单");
         }
     }
 
