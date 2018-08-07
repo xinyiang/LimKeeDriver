@@ -17,8 +17,8 @@ import retrofit2.http.Query;
 
 public interface PostData {
 
-        @GET("get-order/currentorder")
-        Call<ArrayList<Order>> getCurrentOrders(@Query("companyCode") String companyCode);
+        @GET("get-order/todayorderbyroute")
+        Call<ArrayList<Order>> getCurrentOrders(@Query("routeNo") String routeNo);
 
         @GET("get-order/currentorderdetails")
         Call<OrderDetails> getCurrentOrderDetails(@Query("orderNo") String orderNo);
