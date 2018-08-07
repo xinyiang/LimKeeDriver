@@ -5,9 +5,15 @@ public class Order {
     private String deliveryDate;
     private int noOfItems;
     private String deliveryShift;
+    private String customer;
 
     public Order() {
 
+    }
+
+    public Order(String orderID, String customer) {
+        this.orderID = orderID;
+        this.customer = customer;
     }
 
     public Order(String orderID, String deliveryDate, int noOfItems, String deliveryShift) {
@@ -47,6 +53,14 @@ public class Order {
 
     public void setDeliveryShift(String deliveryShift) {
         this.deliveryShift = deliveryShift;
+    }
+
+    public String getContactPerson() {
+        return customer;
+    }
+
+    public void setContactPerson(String customer) {
+        this.customer = customer;
     }
 
 }

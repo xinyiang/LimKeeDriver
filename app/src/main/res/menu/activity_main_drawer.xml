@@ -27,16 +27,6 @@
             android:orderInCategory="200"
             android:title=""/>
 
-        <item
-            android:id="@+id/nav_orderhistory"
-            android:title="@string/orderhistory"/>
-
-        <item
-            android:id="@+id/footer_spacer_5"
-            android:checkable="false"
-            android:enabled="false"
-            android:orderInCategory="200"
-            android:title=""/>
 
         <item
             android:id="@+id/nav_logout"

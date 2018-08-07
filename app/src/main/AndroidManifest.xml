@@ -29,6 +29,9 @@
             android:name=".login.LogoutActivity"
             android:parentActivityName=".login.LoginActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".order.CurrentOrderDetailActivity"
+            android:parentActivityName=".order.CurrentOrderDetailActivity" />
     </application>
 
 </manifest>

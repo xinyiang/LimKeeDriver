@@ -24,7 +24,6 @@ public class CurrentOrderAdapter extends RecyclerView.Adapter<CurrentOrderAdapte
     private String orderID;
     private Driver driver;
     private String isEnglish;
-    private String ETADeliveryDate;
     public RelativeLayout rel;
 
     public CurrentOrderAdapter(CurrentOrderFragment fragment, ArrayList<Order> col, Driver driver, String isEnglish) {
@@ -54,18 +53,9 @@ public class CurrentOrderAdapter extends RecyclerView.Adapter<CurrentOrderAdapte
             public void onClick(View view) {
                 orderID = order.getOrderID();
 
-                String ETA = order.getDeliveryDate();
-                String date = ETA.substring(8);
-                String month = ETA.substring(5,7);
-                String year = ETA.substring(0,4);
-                ETADeliveryDate = date + "/" + month + "/" + year;
-
                 Intent intent = new Intent(view.getContext(), CurrentOrderDetailActivity.class);
                 intent.putExtra("orderID", orderID);
                 intent.putExtra("language", isEnglish);
-                intent.putExtra("deliveryDate", ETADeliveryDate);
-                intent.putExtra("numItems", order.getNoOfItems());
-                intent.putExtra("deliveryShift", order.getDeliveryShift());
                 intent.putExtra("driver", driver);
                 fragment.startActivity(intent);
             }
@@ -77,66 +67,24 @@ public class CurrentOrderAdapter extends RecyclerView.Adapter<CurrentOrderAdapte
 
                 orderID = order.getOrderID();
 
-                String ETA = order.getDeliveryDate();
-                String date = ETA.substring(8);
-                String month = ETA.substring(5,7);
-                String year = ETA.substring(0,4);
-                ETADeliveryDate = date + "/" + month + "/" + year;
-
                 Intent intent = new Intent(view.getContext(), CurrentOrderDetailActivity.class);
                 intent.putExtra("orderID", orderID);
                 intent.putExtra("language", isEnglish);
-                intent.putExtra("deliveryDate", ETADeliveryDate);
-                intent.putExtra("numItems", order.getNoOfItems());
-                intent.putExtra("deliveryShift", order.getDeliveryShift());
                 intent.putExtra("driver", driver);
                 fragment.startActivity(intent);
 
             }
         });
 
-        holder.deliveryDate.setOnClickListener(new View.OnClickListener(){
+        holder.contactPerson.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
 
                 orderID = order.getOrderID();
 
-                String ETA = order.getDeliveryDate();
-                String date = ETA.substring(8);
-                String month = ETA.substring(5,7);
-                String year = ETA.substring(0,4);
-                ETADeliveryDate = date + "/" + month + "/" + year;
-
                 Intent intent = new Intent(view.getContext(), CurrentOrderDetailActivity.class);
                 intent.putExtra("orderID", orderID);
                 intent.putExtra("language", isEnglish);
-                intent.putExtra("deliveryDate", ETADeliveryDate);
-                intent.putExtra("numItems", order.getNoOfItems());
-                intent.putExtra("deliveryShift", order.getDeliveryShift());
-                intent.putExtra("driver", driver);
-                fragment.startActivity(intent);
-
-            }
-        });
-
-        holder.noOfItems.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-
-                orderID = order.getOrderID();
-
-                String ETA = order.getDeliveryDate();
-                String date = ETA.substring(8);
-                String month = ETA.substring(5,7);
-                String year = ETA.substring(0,4);
-                ETADeliveryDate = date + "/" + month + "/" + year;
-
-                Intent intent = new Intent(view.getContext(), CurrentOrderDetailActivity.class);
-                intent.putExtra("orderID", orderID);
-                intent.putExtra("language", isEnglish);
-                intent.putExtra("deliveryDate", ETADeliveryDate);
-                intent.putExtra("numItems", order.getNoOfItems());
-                intent.putExtra("deliveryShift", order.getDeliveryShift());
                 intent.putExtra("driver", driver);
                 fragment.startActivity(intent);
 
@@ -145,36 +93,19 @@ public class CurrentOrderAdapter extends RecyclerView.Adapter<CurrentOrderAdapte
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView orderID, deliveryDate, noOfItems, lbl_deliveryDate;
+        TextView orderID, contactPerson;
         public RelativeLayout viewForeground;
 
         public MyViewHolder(View view) {
             super(view);
             orderID = (TextView) view.findViewById(R.id.orderID);
-            deliveryDate = (TextView) view.findViewById(R.id.deliveryDate);
-            noOfItems = (TextView) view.findViewById(R.id.noOfitems);
+            contactPerson = (TextView) view.findViewById(R.id.name);
         }
 
         public void bindContent(Order order) {
 
             orderID.setText(order.getOrderID());
-            String ETA = order.getDeliveryDate();
-            String date = ETA.substring(8);
-            String month = ETA.substring(5,7);
-            String year = ETA.substring(0,4);
-            ETADeliveryDate = date + "/" + month + "/" + year;
-            deliveryDate.setText(ETADeliveryDate);
-
-            if (isEnglish.equals("Yes")){
-
-                if (order.getNoOfItems() == 1){
-                    noOfItems.setText(order.getNoOfItems() + " item");
-                } else {
-                    noOfItems.setText(order.getNoOfItems() + " items");
-                }
-            } else {
-                noOfItems.setText(order.getNoOfItems() + " 样");
-            }
+            contactPerson.setText(order.getContactPerson());
 
         }
     }

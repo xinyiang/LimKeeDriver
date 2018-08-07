@@ -4,16 +4,9 @@ import java.util.ArrayList;
 import com.limkee.entity.Order;
 import com.limkee.entity.OrderDetails;
 import com.limkee.entity.OrderQuantity;
-
-import io.reactivex.Observable;
 import retrofit2.Call;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
 import retrofit2.http.Query;
-
-
 
 public interface PostData {
 
