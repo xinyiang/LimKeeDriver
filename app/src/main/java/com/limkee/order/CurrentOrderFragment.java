@@ -36,6 +36,7 @@ public class CurrentOrderFragment extends Fragment {
     private RecyclerView recyclerView;
     private Driver driver;
     private String driverId;
+    private String routeNo;
     public static Retrofit retrofit;
     private String isEnglish;
     TextView lbl_noOrders;
@@ -56,6 +57,7 @@ public class CurrentOrderFragment extends Fragment {
         Bundle bundle = getArguments();
         driver = bundle.getParcelable("driver");
         driverId = driver.getDriverID();
+        routeNo = Integer.toString(driver.getRouteNo());
         isEnglish = bundle.getString("language");
         if (isEnglish.equals("Yes")){
             ((NavigationActivity)getActivity()).setActionBarTitle("Current Orders");
@@ -88,12 +90,12 @@ public class CurrentOrderFragment extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
         recyclerView.setAdapter(mAdapter);
-        doGetCurrentOrders(driverId);
+        doGetCurrentOrders(routeNo);
 
         return view;
     }
 
-    private void doGetCurrentOrders(String companyCode) {
+    private void doGetCurrentOrders(String routeNo) {
         if (retrofit == null) {
             retrofit = new retrofit2.Retrofit.Builder()
                     .baseUrl(HttpConstant.BASE_URL)
@@ -101,7 +103,7 @@ public class CurrentOrderFragment extends Fragment {
                     .build();
         }
         PostData service = retrofit.create(PostData.class);
-        Call<ArrayList<Order>> call = service.getCurrentOrders(companyCode);
+        Call<ArrayList<Order>> call = service.getCurrentOrders(routeNo);
         call.enqueue(new Callback<ArrayList<Order>>() {
 
             @Override
