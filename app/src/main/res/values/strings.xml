@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">林记</string>
+    <string name="app_name">林记司机</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -33,14 +33,6 @@
     <string name="select_card">选择您要使用的卡</string>
     <string name="confirm_delete">您确定删除此尾号的卡吗： </string>
     <string name="invalid_card">卡信息错误</string>
-
-    <string-array name="qty">
-        <item>5</item>
-        <item>10</item>
-        <item>15</item>
-        <item>20</item>
-        <item>25</item>
-    </string-array>
     <string name="title_activity_confirmation">ConfirmationActivity</string>
     <string name="paymentdetails">付款详情</string>
     <string name="pay">付款</string>

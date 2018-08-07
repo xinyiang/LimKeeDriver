@@ -57,15 +57,10 @@ public class UserProfileFragment extends Fragment {
         companyCode = view.findViewById(R.id.companyCode);
 
         if (isEnglish.equals("Yes")){
-            TextView lbl_companyName, lbl_companyCode, lbl_name, lbl_phone, lbl_address;
+            TextView lbl_name, lbl_phone, lbl_address;
             //change label
-            lbl_companyName = view.findViewById(R.id.lbl_companyName);
-            lbl_companyCode = view.findViewById(R.id.lbl_companyCode);
             lbl_name = view.findViewById(R.id.lbl_name);
             lbl_phone = view.findViewById(R.id.lbl_phone);
-
-            lbl_companyName.setText("Company Name");
-            lbl_companyCode.setText("Username");
             lbl_name.setText("Name");
             lbl_phone.setText("Contact Number");
         }

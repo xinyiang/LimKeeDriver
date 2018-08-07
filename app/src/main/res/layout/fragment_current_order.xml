@@ -29,7 +29,7 @@
 
 
         <TextView
-            android:id="@+id/lbl_deliveryDateHeader"
+            android:id="@+id/lbl_contactPersonHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
@@ -40,7 +40,7 @@
             android:clickable="true"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="送货日期 "
+            android:text="名字"
             android:textColor="@color/colorPrimary"
             android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -48,20 +48,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/lbl_numItemsHeader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="数量"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/currentOrderRecyclerView"
@@ -73,7 +59,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lbl_deliveryDateHeader"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_contactPersonHeader"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView

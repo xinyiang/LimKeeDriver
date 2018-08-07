@@ -35,7 +35,6 @@ public class CurrentOrderFragment extends Fragment {
     private CoordinatorLayout coordinatorLayout;
     private RecyclerView recyclerView;
     private Driver driver;
-    private String driverId;
     private String routeNo;
     public static Retrofit retrofit;
     private String isEnglish;
@@ -56,13 +55,12 @@ public class CurrentOrderFragment extends Fragment {
 
         Bundle bundle = getArguments();
         driver = bundle.getParcelable("driver");
-        driverId = driver.getDriverID();
         routeNo = Integer.toString(driver.getRouteNo());
         isEnglish = bundle.getString("language");
         if (isEnglish.equals("Yes")){
-            ((NavigationActivity)getActivity()).setActionBarTitle("Today's Orders");
+            ((NavigationActivity)getActivity()).setActionBarTitle("Today Current Orders");
         } else {
-            ((NavigationActivity)getActivity()).setActionBarTitle("今日订单");
+            ((NavigationActivity)getActivity()).setActionBarTitle("今日当前订单");
         }
     }
 
@@ -70,16 +68,14 @@ public class CurrentOrderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_current_order, container, false);
-        TextView lbl_orderIDHeader, lbl_numItemsHeader, lbl_deliveryDateHeader, lbl_noOrders;
+        TextView lbl_orderIDHeader, lbl_contactPersonHeader;
 
         lbl_orderIDHeader = (TextView) view.findViewById(R.id.lbl_orderIDHeader);
-        lbl_deliveryDateHeader = (TextView) view.findViewById(R.id.lbl_deliveryDateHeader);
-        lbl_numItemsHeader = (TextView) view.findViewById(R.id.lbl_numItemsHeader);
+        lbl_contactPersonHeader = (TextView) view.findViewById(R.id.lbl_contactPersonHeader);
 
         if (isEnglish.equals("Yes")) {
             lbl_orderIDHeader.setText("Order ID");
-            lbl_deliveryDateHeader.setText("Delivery Date");
-            lbl_numItemsHeader.setText("Total No.");
+            lbl_contactPersonHeader.setText("Contact Person");
         }
 
         recyclerView = view.findViewById(R.id.currentOrderRecyclerView);
@@ -102,6 +98,7 @@ public class CurrentOrderFragment extends Fragment {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
+
         PostData service = retrofit.create(PostData.class);
         Call<ArrayList<Order>> call = service.getCurrentOrders(routeNo);
         call.enqueue(new Callback<ArrayList<Order>>() {
@@ -111,15 +108,14 @@ public class CurrentOrderFragment extends Fragment {
                 ArrayList<Order> data = response.body();
                 OrderDAO.currentOrdersList = data;
                 mAdapter.update(OrderDAO.currentOrdersList);
-
                 if (data.size() == 0) {
                     if (isEnglish.equals("Yes")) {
                         lbl_noOrders = view.findViewById(R.id.lbl_noOrders);
                         view.findViewById(R.id.lbl_noOrders).setVisibility(View.VISIBLE);
-                        lbl_noOrders.setText("No current orders");
+                        lbl_noOrders.setText("No orders");
                     } else {
                         lbl_noOrders = view.findViewById(R.id.lbl_noOrders);
-                        lbl_noOrders.setText("没有当前订单");
+                        lbl_noOrders.setText("没有订单");
                         view.findViewById(R.id.lbl_noOrders).setVisibility(View.VISIBLE);
                     }
                 }
@@ -127,7 +123,7 @@ public class CurrentOrderFragment extends Fragment {
 
             @Override
             public void onFailure(Call<ArrayList<Order>> call, Throwable t) {
-                System.out.println(t.getMessage());
+                System.out.println("ERROR " + t.getMessage());
             }
         });
 
