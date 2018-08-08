@@ -1,4 +1,4 @@
-package com.limkee.userProfile;
+package com.driver.userProfile;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,12 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import com.limkee.R;
-import com.limkee.entity.Customer;
-import com.limkee.entity.Driver;
-import com.limkee.login.LogoutActivity;
-import com.limkee.navigation.NavigationActivity;
-import java.util.ArrayList;
+import com.driver.R;
+import com.driver.entity.Driver;
+import com.driver.login.LogoutActivity;
+import com.driver.navigation.NavigationActivity;
+
 import io.reactivex.disposables.CompositeDisposable;
 
 public class UserProfileFragment extends Fragment {

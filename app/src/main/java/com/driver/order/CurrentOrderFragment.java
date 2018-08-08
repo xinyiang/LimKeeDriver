@@ -1,4 +1,4 @@
-package com.limkee.order;
+package com.driver.order;
 
 import android.content.Context;
 import android.net.Uri;
@@ -13,13 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.limkee.R;
-import com.limkee.constant.HttpConstant;
-import com.limkee.constant.PostData;
-import com.limkee.dao.OrderDAO;
-import com.limkee.entity.Driver;
-import com.limkee.entity.Order;
-import com.limkee.navigation.NavigationActivity;
+import com.driver.R;
+import com.driver.constant.HttpConstant;
+import com.driver.constant.PostData;
+import com.driver.dao.OrderDAO;
+import com.driver.entity.Driver;
+import com.driver.entity.Order;
+import com.driver.navigation.NavigationActivity;
 import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;

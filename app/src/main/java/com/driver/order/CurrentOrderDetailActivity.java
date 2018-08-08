@@ -1,4 +1,4 @@
-package com.limkee.order;
+package com.driver.order;
 
 import android.net.Uri;
 import android.support.v4.app.Fragment;
@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
-import com.limkee.R;
+import com.driver.R;
 
 public class CurrentOrderDetailActivity extends AppCompatActivity implements CurrentOrderFragment.OnFragmentInteractionListener, CurrentOrderDetailFragment.OnFragmentInteractionListener {
 
@@ -22,7 +22,7 @@ public class CurrentOrderDetailActivity extends AppCompatActivity implements Cur
 
         myBundle = getIntent().getExtras();
 
-        Toolbar toolbar = findViewById(com.limkee.R.id.toolbar);
+        Toolbar toolbar = findViewById(com.driver.R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -37,7 +37,7 @@ public class CurrentOrderDetailActivity extends AppCompatActivity implements Cur
         //Change screen to option selected (using fragments)
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(com.limkee.R.id.flContent, fragment);
+        fragmentTransaction.replace(com.driver.R.id.flContent, fragment);
         fragmentTransaction.commit();
 
     }
@@ -62,7 +62,7 @@ public class CurrentOrderDetailActivity extends AppCompatActivity implements Cur
     }
 
     public void setActionBarTitle(String title){
-        TextView titleTextView = findViewById(com.limkee.R.id.toolbar_title);
+        TextView titleTextView = findViewById(com.driver.R.id.toolbar_title);
         if (titleTextView != null) {
             titleTextView.setText(title);
         }

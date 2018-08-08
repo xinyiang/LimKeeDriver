@@ -1,11 +1,10 @@
-package com.limkee.dao;
+package com.driver.dao;
 
-import com.limkee.entity.Order;
-import com.limkee.entity.OrderDetails;
-import com.limkee.entity.OrderQuantity;
+import com.driver.entity.Order;
+import com.driver.entity.OrderDetails;
+import com.driver.entity.OrderQuantity;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class OrderDAO {
 

@@ -1,9 +1,9 @@
-package com.limkee.constant;
+package com.driver.constant;
 
 import java.util.ArrayList;
-import com.limkee.entity.Order;
-import com.limkee.entity.OrderDetails;
-import com.limkee.entity.OrderQuantity;
+import com.driver.entity.Order;
+import com.driver.entity.OrderDetails;
+import com.driver.entity.OrderQuantity;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
