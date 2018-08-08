@@ -1,13 +1,13 @@
-package com.limkee.order;
+package com.driver.order;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.limkee.R;
-import com.limkee.entity.OrderDetails;
-import com.limkee.entity.OrderQuantity;
+import com.driver.R;
+import com.driver.entity.OrderDetails;
+import com.driver.entity.OrderQuantity;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 

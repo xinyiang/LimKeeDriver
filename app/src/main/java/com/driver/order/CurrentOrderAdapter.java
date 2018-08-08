@@ -1,4 +1,4 @@
-package com.limkee.order;
+package com.driver.order;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -7,15 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.limkee.R;
-import com.limkee.entity.Customer;
-import com.limkee.entity.Driver;
-import com.limkee.entity.Order;
-import java.io.Serializable;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import com.driver.R;
+import com.driver.entity.Driver;
+import com.driver.entity.Order;
+
 import java.util.ArrayList;
-import java.util.Date;
 
 
 public class CurrentOrderAdapter extends RecyclerView.Adapter<CurrentOrderAdapter.MyViewHolder> {

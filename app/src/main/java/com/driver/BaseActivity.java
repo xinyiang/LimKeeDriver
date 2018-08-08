@@ -1,9 +1,9 @@
-package com.limkee;
+package com.driver;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 
-import com.limkee.locale.MyContextWrapper;
+import com.driver.locale.MyContextWrapper;
 
 public class BaseActivity extends AppCompatActivity {
 

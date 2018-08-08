@@ -1,4 +1,4 @@
-package com.limkee.entity;
+package com.driver.entity;
 
 public class Order {
     private String orderID;

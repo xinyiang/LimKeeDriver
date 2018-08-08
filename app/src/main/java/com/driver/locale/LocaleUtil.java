@@ -1,4 +1,4 @@
-package com.limkee.locale;
+package com.driver.locale;
 
 import android.content.Context;
 import android.content.SharedPreferences;

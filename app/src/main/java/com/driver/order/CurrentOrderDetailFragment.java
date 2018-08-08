@@ -1,4 +1,4 @@
-package com.limkee.order;
+package com.driver.order;
 
 import android.content.Context;
 import android.net.Uri;
@@ -15,13 +15,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.limkee.R;
-import com.limkee.constant.HttpConstant;
-import com.limkee.constant.PostData;
-import com.limkee.dao.OrderDAO;
-import com.limkee.entity.Customer;
-import com.limkee.entity.OrderDetails;
-import com.limkee.entity.OrderQuantity;
+import com.driver.R;
+import com.driver.constant.HttpConstant;
+import com.driver.constant.PostData;
+import com.driver.dao.OrderDAO;
+import com.driver.entity.Customer;
+import com.driver.entity.OrderDetails;
+import com.driver.entity.OrderQuantity;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -98,7 +98,7 @@ public class CurrentOrderDetailFragment extends Fragment {
         progressBar = view.findViewById(R.id.progressBar);
         recyclerView = view.findViewById(R.id.recyclerView);
 
-        recyclerView = (RecyclerView) view.findViewById(com.limkee.R.id.recyclerView);
+        recyclerView = (RecyclerView) view.findViewById(com.driver.R.id.recyclerView);
 
         mAdapter = new CurrentOrderDetailAdapter(this, isEnglish);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());

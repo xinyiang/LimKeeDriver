@@ -1,20 +1,17 @@
-package com.limkee.login;
+package com.driver.login;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.os.CountDownTimer;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.limkee.R;
-import com.limkee.entity.Customer;
-import com.limkee.entity.Driver;
-import com.limkee.navigation.NavigationActivity;
+import com.driver.R;
+import com.driver.entity.Driver;
+import com.driver.navigation.NavigationActivity;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -22,22 +19,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
-
-import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by Miaozi on 6/8/18.

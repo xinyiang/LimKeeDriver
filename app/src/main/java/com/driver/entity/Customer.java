@@ -1,8 +1,6 @@
-package com.limkee.entity;
+package com.driver.entity;
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import java.io.Serializable;
 
 
 @SuppressWarnings("serial")

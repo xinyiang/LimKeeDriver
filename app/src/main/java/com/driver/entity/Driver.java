@@ -1,8 +1,8 @@
-package com.limkee.entity;
+package com.driver.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import java.io.Serializable;
+
 @SuppressWarnings("serial")
 public class Driver implements Parcelable  {
     private String driverID;
@@ -72,13 +72,13 @@ public class Driver implements Parcelable  {
         readFromParcel(in);
     }
 
-    public static final Parcelable.Creator<com.limkee.entity.Driver> CREATOR = new Parcelable.Creator<com.limkee.entity.Driver>() {
-        public com.limkee.entity.Driver createFromParcel(Parcel in) {
-            return new com.limkee.entity.Driver(in);
+    public static final Parcelable.Creator<com.driver.entity.Driver> CREATOR = new Parcelable.Creator<com.driver.entity.Driver>() {
+        public com.driver.entity.Driver createFromParcel(Parcel in) {
+            return new com.driver.entity.Driver(in);
         }
 
-        public com.limkee.entity.Driver[] newArray(int size) {
-            return new com.limkee.entity.Driver[size];
+        public com.driver.entity.Driver[] newArray(int size) {
+            return new com.driver.entity.Driver[size];
         }
 
     };

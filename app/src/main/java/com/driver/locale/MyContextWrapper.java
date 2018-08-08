@@ -1,4 +1,4 @@
-package com.limkee.locale;
+package com.driver.locale;
 
 import android.annotation.TargetApi;
 import android.content.Context;

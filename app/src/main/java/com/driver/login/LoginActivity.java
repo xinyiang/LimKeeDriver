@@ -1,4 +1,4 @@
-package com.limkee.login;
+package com.driver.login;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,17 +12,17 @@ import android.widget.EditText;
 import android.net.Uri;
 import android.widget.Switch;
 import android.widget.TextView;
-import com.limkee.BaseActivity;
-import com.limkee.R;
-import com.limkee.locale.MyContextWrapper;
-import com.limkee.navigation.NavigationActivity;
-import com.limkee.order.CurrentOrderFragment;
+import com.driver.BaseActivity;
+import com.driver.R;
+import com.driver.locale.MyContextWrapper;
+import com.driver.navigation.NavigationActivity;
+import com.driver.order.CurrentOrderFragment;
 
 import java.security.MessageDigest;
 
 public class LoginActivity extends BaseActivity implements
         CurrentOrderFragment.OnFragmentInteractionListener {
-    EditText companycode, password;
+    EditText username, password;
     Switch switchCtrl;
     private CheckBox saveLoginCheckBox;
     private SharedPreferences loginPreferences;
@@ -35,7 +35,7 @@ public class LoginActivity extends BaseActivity implements
         super.onCreate(savedInstanceState);
         final Context context = getApplicationContext();
         setContentView(R.layout.activity_login);
-        companycode = findViewById(R.id.companyCode);
+        username = findViewById(R.id.username);
         password = findViewById(R.id.etPassword);
         final SharedPreferences settings = getSharedPreferences("switchkey", 0);
 
@@ -69,11 +69,11 @@ public class LoginActivity extends BaseActivity implements
     }
 
     public void login(View view){
-        String code = companycode.getText().toString();
+        String code = username.getText().toString();
         String pwd = password.getText().toString();
 
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(companycode.getWindowToken(), 0);
+        imm.hideSoftInputFromWindow(username.getWindowToken(), 0);
 
         if (true) {
             loginPrefsEditor.putBoolean("saveLogin", true);

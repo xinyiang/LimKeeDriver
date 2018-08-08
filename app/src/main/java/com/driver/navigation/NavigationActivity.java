@@ -1,4 +1,4 @@
-package com.limkee.navigation;
+package com.driver.navigation;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,13 +18,13 @@ import android.widget.TextView;
 import android.support.design.widget.NavigationView;
 
 import com.google.gson.Gson;
-import com.limkee.BaseActivity;
-import com.limkee.R;
-import com.limkee.entity.Driver;
-import com.limkee.login.LoginActivity;
-import com.limkee.login.LogoutActivity;
-import com.limkee.order.CurrentOrderFragment;
-import com.limkee.userProfile.UserProfileFragment;
+import com.driver.BaseActivity;
+import com.driver.R;
+import com.driver.entity.Driver;
+import com.driver.login.LoginActivity;
+import com.driver.login.LogoutActivity;
+import com.driver.order.CurrentOrderFragment;
+import com.driver.userProfile.UserProfileFragment;
 
 public class NavigationActivity extends BaseActivity implements
         NavigationView.OnNavigationItemSelectedListener, UserProfileFragment.OnFragmentInteractionListener,
@@ -64,7 +64,6 @@ public class NavigationActivity extends BaseActivity implements
         loginPrefsEditor = loginPreferences.edit();
         boolean isLogin = loginPreferences.getBoolean("isLogin",false);
         isEnglish = loginPreferences.getString("language","");
-        deliveryShift = loginPreferences.getString("deliveryShift","");
 
         if(isLogin) {
             Gson gson = new Gson();
@@ -73,7 +72,6 @@ public class NavigationActivity extends BaseActivity implements
             bundle = new Bundle();
             bundle.putParcelable("driver", driver);
             bundle.putString("language", isEnglish);
-            bundle.putString("deliveryShift", deliveryShift);
             loadFragment(CurrentOrderFragment.class);
         } else {
             Intent it = new Intent(this, LoginActivity.class);
